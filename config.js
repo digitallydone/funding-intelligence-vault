@@ -28,7 +28,7 @@ const SITE_CONFIG = {
   // Product delivery links
   softrAppUrl: "",          // Softr web app URL — PRIMARY delivery (e.g. "https://vault.itsdigitally.com")
   sheetsTemplateUrl: "",    // Google Sheets copy-template link — backup option
-  airtableTemplateUrl: "",  // Airtable template link — white-glove option
+  airtableTemplateUrl: "https://airtable.com/appAQQXCDQaXUEsJZ/tblh8VpJvJVRvCImn/viwAck01mBc65LxH8",
   csvDownloadUrl: "funding-intelligence-vault-template.csv",
 
   // Support
