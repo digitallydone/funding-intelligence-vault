@@ -1,5 +1,5 @@
 /**
- * BOSs | Funding Intelligence Vault — Site JavaScript
+ * BOS | Funding Intelligence Vault — Site JavaScript
  * Handles: config injection, Paystack checkout, Formspree, redirects, UI state
  */
 

@@ -1,5 +1,5 @@
 # Google Sheets Template Setup Guide
-**BOSs | Business Opportunity Systems — Funding Intelligence Vault**
+**BOS | Business Opportunity Systems — Funding Intelligence Vault**
 
 ---
 
@@ -106,7 +106,7 @@ Set approximate column widths for readability:
 
 ```
 FUNDING INTELLIGENCE VAULT
-BOSs | Business Opportunity Systems
+BOS | Business Opportunity Systems
 
 Welcome to your workspace.
 

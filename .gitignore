@@ -25,3 +25,4 @@ yarn-error.log*
 # Temp / drafts
 *.draft.*
 drafts/
+.vercel

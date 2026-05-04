@@ -1,5 +1,5 @@
 /**
- * BOSs | Business Opportunity Systems
+ * BOS | Business Opportunity Systems
  * Funding Intelligence Vault — Site Configuration
  *
  * Fill in your values below. Buttons linked to empty values
@@ -7,7 +7,7 @@
  */
 const SITE_CONFIG = {
   // Branding
-  brandName: "BOSs | Business Opportunity Systems",
+  brandName: "BOS | Business Opportunity Systems",
   productName: "Funding Intelligence Vault",
   tagline: "Find more grant opportunities without spending hours searching.",
 

@@ -1,5 +1,5 @@
 # Customer Delivery Pack
-**BOSs | Business Opportunity Systems — Funding Intelligence Vault**
+**BOS | Business Opportunity Systems — Funding Intelligence Vault**
 
 ---
 
@@ -63,8 +63,8 @@ If you have any questions or run into any issues, reply to this email or write t
 
 Welcome to the Vault.
 
-— The BOSs Team
-BOSs | Business Opportunity Systems
+— The BOS Team
+BOS | Business Opportunity Systems
 
 ---
 

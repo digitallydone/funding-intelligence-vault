@@ -1,5 +1,5 @@
 # Airtable Base Specification
-**BOSs | Business Opportunity Systems — Funding Intelligence Vault**
+**BOS | Business Opportunity Systems — Funding Intelligence Vault**
 **White-Glove Setup Guide**
 
 ---
@@ -231,4 +231,4 @@ Your Airtable base is configured and ready. You should have received a sharing i
 
 If you have any questions about the workspace, reply to this email.
 
-— The BOSs Team
+— The BOS Team

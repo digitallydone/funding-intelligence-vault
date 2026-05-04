@@ -1,5 +1,5 @@
 # Product Delivery Notes
-**BOSs | Business Opportunity Systems — Funding Intelligence Vault**
+**BOS | Business Opportunity Systems — Funding Intelligence Vault**
 **Version: 1.0 — Early Access**
 
 ---

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" width="340" height="80">
+  <!-- Pill background mark -->
+  <rect x="0" y="14" width="56" height="52" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <!-- Rising bars -->
+  <rect x="10" y="46" width="8" height="10" rx="2" fill="#F59E0B" opacity="0.5"/>
+  <rect x="22" y="38" width="8" height="18" rx="2" fill="#F59E0B" opacity="0.75"/>
+  <rect x="34" y="28" width="8" height="28" rx="2" fill="#F59E0B"/>
+  <!-- BOS white -->
+  <text x="72" y="50" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" font-size="38" letter-spacing="-1.5" fill="#FFFFFF">BOS</text>
+  <!-- Vertical divider -->
+  <line x1="188" y1="22" x2="188" y2="58" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <!-- Right tagline stacked -->
+  <text x="200" y="38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="8.5" letter-spacing="1.8" fill="rgba(255,255,255,0.45)">BUSINESS</text>
+  <text x="200" y="50" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="8.5" letter-spacing="1.8" fill="rgba(255,255,255,0.45)">OPPORTUNITY</text>
+  <text x="200" y="62" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="8.5" letter-spacing="1.8" fill="rgba(255,255,255,0.45)">SYSTEMS</text>
+</svg>

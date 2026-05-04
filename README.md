@@ -1,5 +1,5 @@
 # Funding Intelligence Vault
-**BOSs | Business Opportunity Systems**
+**BOS | Business Opportunity Systems**
 
 A premium static website for the Funding Intelligence Vault — a ready-to-use grant research workspace for Canadian nonprofits, NGOs, social enterprises, and grant writers.
 

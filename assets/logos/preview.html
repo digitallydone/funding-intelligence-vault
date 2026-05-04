@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BOS Logo Options</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F8FAFC; color: #1E293B; padding: 3rem 2rem; }
+  h1 { font-size: 1.1rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #64748B; margin-bottom: 2.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
+
+  .option { background: #fff; border-radius: 16px; border: 1px solid #E2E8F0; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+  .option-label { padding: .75rem 1.5rem; background: #F1F5F9; border-bottom: 1px solid #E2E8F0; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #64748B; }
+
+  /* Light background preview */
+  .preview-light { padding: 2.5rem; display: flex; align-items: center; justify-content: center; min-height: 140px; }
+  /* Dark background preview */
+  .preview-dark  { padding: 2.5rem; display: flex; align-items: center; justify-content: center; min-height: 140px; background: #0F172A; }
+
+  .divider { height: 1px; background: #E2E8F0; }
+  .sub-label { padding: .5rem 1.5rem; font-size: .7rem; font-weight: 600; color: #94A3B8; letter-spacing: .06em; background: #F8FAFC; }
+
+  img { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<h1>BOS — Logo Options (Select One)</h1>
+
+<div class="grid">
+
+  <!-- OPTION 1 -->
+  <div class="option">
+    <div class="option-label">Option 1 — Diamond Precision</div>
+    <div class="sub-label">On light background</div>
+    <div class="preview-light">
+      <img src="bos-logo-1.svg" alt="BOS Logo Option 1">
+    </div>
+    <div class="divider"></div>
+    <div class="sub-label">On dark background</div>
+    <div class="preview-dark">
+      <img src="bos-logo-1-white.svg" onerror="this.style.opacity='.4'" alt="BOS Logo Option 1 Dark">
+    </div>
+  </div>
+
+  <!-- OPTION 2 -->
+  <div class="option">
+    <div class="option-label">Option 2 — Signal Bars (Pill)</div>
+    <div class="sub-label">On light background</div>
+    <div class="preview-light">
+      <img src="bos-logo-2.svg" alt="BOS Logo Option 2">
+    </div>
+    <div class="divider"></div>
+    <div class="sub-label">On dark background</div>
+    <div class="preview-dark">
+      <img src="bos-logo-2-white.svg" onerror="this.style.opacity='.4'" alt="BOS Logo Option 2 Dark">
+    </div>
+  </div>
+
+  <!-- OPTION 3 -->
+  <div class="option">
+    <div class="option-label">Option 3 — Hexagon Monogram</div>
+    <div class="sub-label">On light background</div>
+    <div class="preview-light">
+      <img src="bos-logo-3.svg" alt="BOS Logo Option 3">
+    </div>
+    <div class="divider"></div>
+    <div class="sub-label">On dark background</div>
+    <div class="preview-dark">
+      <img src="bos-logo-3-white.svg" onerror="this.style.opacity='.4'" alt="BOS Logo Option 3 Dark">
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

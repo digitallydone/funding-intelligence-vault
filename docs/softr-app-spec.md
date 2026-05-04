@@ -1,5 +1,5 @@
 # Softr App Specification
-**BOSs | Business Opportunity Systems — Funding Intelligence Vault**
+**BOS | Business Opportunity Systems — Funding Intelligence Vault**
 **Web App Version — Built on Softr + Airtable**
 
 ---

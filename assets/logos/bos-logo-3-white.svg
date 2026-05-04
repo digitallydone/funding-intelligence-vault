@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <!-- Hexagon mark -->
+  <g transform="translate(8, 10)">
+    <polygon points="30,0 52,13 52,39 30,52 8,39 8,13"
+             fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+    <polygon points="30,10 44,18 44,34 30,42 16,34 16,18"
+             fill="#F59E0B" opacity="0.18"/>
+    <text x="30" y="36" text-anchor="middle"
+          font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+          font-weight="900" font-size="22" fill="#FFFFFF">B</text>
+  </g>
+  <!-- O in amber, S in white -->
+  <text x="76" y="50" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" font-size="36" letter-spacing="-1" fill="#F59E0B">O</text>
+  <text x="108" y="50" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" font-size="36" letter-spacing="-1" fill="#FFFFFF">S</text>
+  <!-- Tagline -->
+  <text x="76" y="66" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="500" font-size="8" letter-spacing="3" fill="rgba(255,255,255,0.4)">BUSINESS OPPORTUNITY SYSTEMS</text>
+  <!-- Amber dot -->
+  <circle cx="289" cy="50" r="4" fill="#F59E0B"/>
+</svg>

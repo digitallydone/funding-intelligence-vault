@@ -1,5 +1,5 @@
 # Outreach Kickoff Pack
-**BOSs | Business Opportunity Systems — Funding Intelligence Vault**
+**BOS | Business Opportunity Systems — Funding Intelligence Vault**
 **Early Access Launch**
 
 ---

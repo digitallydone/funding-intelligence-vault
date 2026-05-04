@@ -1,5 +1,5 @@
 # Customer Onboarding Playbook
-**BOSs | Business Opportunity Systems — Funding Intelligence Vault**
+**BOS | Business Opportunity Systems — Funding Intelligence Vault**
 
 ---
 
