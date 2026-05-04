@@ -16,7 +16,7 @@ const SITE_CONFIG = {
   earlyAccessLabel: "Early Access — $49",
 
   // Paystack Payment
-  paystackPublicKey: "", // e.g. "pk_live_xxxxxxxxxxxx"
+  paystackPublicKey: "pk_live_9f246a1b01ecb07adc6f28865484fb76d6161b5d",
   paystackCurrency: "USD",
   paystackAmount: 4900, // in subunits (cents) — 4900 = $49.00
   paystackFallbackMessage:
