@@ -27,7 +27,7 @@ const SITE_CONFIG = {
 
   // Product delivery links
   softrAppUrl: "https://funding-vault.softr.app",          // Softr web app URL — PRIMARY delivery
-  sheetsTemplateUrl: "",    // Google Sheets copy-template link — backup option
+  sheetsTemplateUrl: "https://docs.google.com/spreadsheets/d/18Jhi4D0HyMQpcVPc84KzbGtNx2rpFx2FFnY999Ui7z4/copy",    // Google Sheets copy-template link — backup option
   airtableTemplateUrl: "https://airtable.com/appAQQXCDQaXUEsJZ/tblh8VpJvJVRvCImn/viwAck01mBc65LxH8",
   csvDownloadUrl: "funding-intelligence-vault-template.csv",
 
