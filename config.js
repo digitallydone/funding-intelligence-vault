@@ -23,7 +23,7 @@ const SITE_CONFIG = {
     "Online payment is temporarily unavailable. Please email us at subscribe@itsdigitally.com to complete your purchase manually.",
 
   // Form submission (Formspree)
-  formspreeEndpoint: "", // e.g. "https://formspree.io/f/yourformid"
+  formspreeEndpoint: "https://formspree.io/f/xaqagedq",
 
   // Product delivery links
   softrAppUrl: "",          // Softr web app URL — PRIMARY delivery (e.g. "https://vault.itsdigitally.com")
