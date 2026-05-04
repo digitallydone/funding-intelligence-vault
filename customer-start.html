@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Workspace — Funding Intelligence Vault | BOSs</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .access-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow .2s ease, transform .2s ease;
+    }
+    .access-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .access-card.featured { border-color: var(--amber); }
+    .access-card-header {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .access-card-body { padding: 1.75rem 2rem 2rem; }
+    .platform-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+      border-radius: 100px;
+      margin-bottom: .85rem;
+    }
+    .tag-primary   { background: var(--amber-lt); color: var(--amber-dk); }
+    .tag-secondary { background: #EFF6FF; color: var(--blue); }
+    .tag-backup    { background: #F1F5F9; color: var(--navy-soft); }
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      margin: 1.1rem 0 1.5rem;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .55rem;
+      font-size: .85rem;
+      color: var(--muted);
+      list-style: none;
+    }
+    .feature-list li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      font-size: .8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .how-step {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      padding: .85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .how-step:last-child { border-bottom: none; }
+    .coming-soon-state {
+      display: none;
+      align-items: center;
+      gap: .6rem;
+      padding: .85rem 1.1rem;
+      background: var(--bg);
+      border: 1.5px dashed var(--border);
+      border-radius: var(--radius-sm);
+      font-size: .825rem;
+      color: var(--light);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body id="customer-start-page">
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-name">BOSs | Business Opportunity Systems</span>
+      <span class="nav-product">Funding Intelligence Vault</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section style="background:var(--navy); padding:3.5rem 0 3rem; text-align:center;">
+  <div class="container" style="max-width:680px;">
+    <div style="font-size:2.75rem; margin-bottom:1rem;">🔓</div>
+    <div class="label" style="background:rgba(245,158,11,.15); color:var(--amber);">Access granted</div>
+    <h1 style="color:#fff; margin-bottom:.85rem;">Your Funding Intelligence Vault is ready</h1>
+    <p style="color:rgba(255,255,255,.65); font-size:1rem; max-width:500px; margin:0 auto;">
+      Choose your preferred workspace format below. The web app is the recommended experience — searchable, filterable, and accessible from any device.
+    </p>
+  </div>
+</section>
+
+<!-- Access options -->
+<section class="section-sm">
+  <div class="container" style="max-width:900px;">
+
+    <!-- ── PRIMARY: Softr Web App ──────────────────────────── -->
+    <div id="softr-option" class="access-card featured" style="margin-bottom:1.5rem;">
+      <div class="access-card-header">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+          <div>
+            <span class="platform-tag tag-primary">⭐ Recommended — Web App</span>
+            <div style="display:flex; align-items:center; gap:.85rem;">
+              <span style="font-size:2.25rem;">🌐</span>
+              <div>
+                <h2 style="margin:0; font-size:1.4rem;">Funding Intelligence Vault — Web App</h2>
+                <p style="margin:.2rem 0 0; font-size:.875rem;">Built on Softr · Powered by Airtable</p>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <div style="font-size:.7rem; font-weight:700; color:var(--muted); letter-spacing:.05em; text-transform:uppercase; margin-bottom:.2rem;">No login required for</div>
+            <div style="font-size:.7rem; font-weight:700; color:var(--muted); letter-spacing:.05em; text-transform:uppercase;">Google Sheets or CSV</div>
+          </div>
+        </div>
+      </div>
+      <div class="access-card-body">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;">
+          <div>
+            <p style="font-size:.9rem; margin-bottom:1rem;">A real web application — no spreadsheet skills needed, no downloads, no setup. Log in with your email, search and filter 75+ funders, update your pipeline status, and track next actions — all in one place.</p>
+            <ul class="feature-list">
+              <li>Full-text search across all funders and programs</li>
+              <li>Filter by province, sector, fit score, difficulty, and deadline type</li>
+              <li>Pre-built view: High Fit Picks (sorted Low → High difficulty)</li>
+              <li>Pipeline tracker — update Status and Next Action per funder</li>
+              <li>Funder detail pages with all 17 fields</li>
+              <li>Works on desktop, tablet, and mobile</li>
+              <li>No "make a copy" — your login is your access</li>
+            </ul>
+
+            <!-- App URL button — shown when configured -->
+            <div id="softr-btn-wrap" data-optional style="display:none;">
+              <a id="softr-btn" href="#" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" data-config-href="softrAppUrl" data-external>
+                Open Web App →
+              </a>
+            </div>
+
+            <!-- Coming soon state — shown when not yet configured -->
+            <div id="softr-coming-soon" class="coming-soon-state" style="display:flex;">
+              <span style="font-size:1.25rem;">⏳</span>
+              <div>
+                <div style="font-weight:600; color:var(--navy-mid); margin-bottom:.15rem;">Web app launching soon</div>
+                <div>Your access link will be sent by email within 24 hours. Questions? <a href="mailto:subscribe@itsdigitally.com" style="color:var(--amber-dk); text-decoration:underline;">Email us</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- How it works -->
+          <div style="background:var(--bg); border-radius:var(--radius); padding:1.5rem;">
+            <div style="font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem;">How to access</div>
+            <div class="how-step">
+              <div class="step-badge" style="background:var(--amber); color:var(--navy);">1</div>
+              <div>
+                <div style="font-size:.85rem; font-weight:600; color:var(--navy); margin-bottom:.2rem;">Check your email</div>
+                <div style="font-size:.8rem; color:var(--muted);">A magic link will be sent to your inbox — no password needed</div>
+              </div>
+            </div>
+            <div class="how-step">
+              <div class="step-badge" style="background:var(--amber); color:var(--navy);">2</div>
+              <div>
+                <div style="font-size:.85rem; font-weight:600; color:var(--navy); margin-bottom:.2rem;">Click the link</div>
+                <div style="font-size:.8rem; color:var(--muted);">One click logs you straight into your workspace — bookmarkable</div>
+              </div>
+            </div>
+            <div class="how-step">
+              <div class="step-badge" style="background:var(--green); color:#fff;">✓</div>
+              <div>
+                <div style="font-size:.85rem; font-weight:600; color:var(--navy); margin-bottom:.2rem;">Start using it</div>
+                <div style="font-size:.8rem; color:var(--muted);">Search, filter, explore, and track your funding pipeline</div>
+              </div>
+            </div>
+            <div style="margin-top:1rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.775rem; color:var(--light);">
+              🔒 Your login is tied to the email you used at checkout. Each purchase is single-user access.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECONDARY OPTIONS ─────────────────────────────── -->
+    <div style="margin-bottom:.85rem;">
+      <div style="font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--light); text-align:center;">
+        Also available — alternative formats
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:1.25rem; margin-bottom:1.5rem;">
+
+      <!-- Google Sheets -->
+      <div class="access-card" data-optional>
+        <div class="access-card-header" style="padding:1.5rem 1.5rem 1.1rem;">
+          <span class="platform-tag tag-secondary">Google Sheets</span>
+          <div style="display:flex; align-items:center; gap:.75rem;">
+            <span style="font-size:1.75rem;">📊</span>
+            <div>
+              <h3 style="margin:0; font-size:1.05rem;">Google Sheets Workspace</h3>
+              <p style="margin:.15rem 0 0; font-size:.8rem;">Copy to your Drive — edit freely</p>
+            </div>
+          </div>
+        </div>
+        <div class="access-card-body" style="padding:1.25rem 1.5rem 1.5rem;">
+          <ul class="feature-list" style="margin-top:0;">
+            <li>All 75 funders pre-loaded with 17 columns</li>
+            <li>Filters and conditional formatting included</li>
+            <li>Fully customizable — add columns, notes, formulas</li>
+          </ul>
+          <div data-optional>
+            <a id="sheets-btn" href="#" class="btn btn-secondary btn-full" data-config-href="sheetsTemplateUrl" data-external>
+              Open Google Sheets →
+            </a>
+            <div class="coming-soon-label hidden" style="text-align:center; margin-top:.5rem;">Link coming soon — check email</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CSV -->
+      <div class="access-card">
+        <div class="access-card-header" style="padding:1.5rem 1.5rem 1.1rem;">
+          <span class="platform-tag tag-backup">CSV Export</span>
+          <div style="display:flex; align-items:center; gap:.75rem;">
+            <span style="font-size:1.75rem;">📥</span>
+            <div>
+              <h3 style="margin:0; font-size:1.05rem;">Raw CSV Download</h3>
+              <p style="margin:.15rem 0 0; font-size:.8rem;">Import into any tool you use</p>
+            </div>
+          </div>
+        </div>
+        <div class="access-card-body" style="padding:1.25rem 1.5rem 1.5rem;">
+          <ul class="feature-list" style="margin-top:0;">
+            <li>Import into Notion, Monday.com, ClickUp, or your CRM</li>
+            <li>75 rows · 17 columns · UTF-8 encoded</li>
+            <li>Instant download — no account required</li>
+          </ul>
+          <a href="funding-intelligence-vault-template.csv" class="btn btn-secondary btn-full" data-csv-download download>
+            Download CSV →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Airtable white-glove -->
+    <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; display:flex; gap:1.5rem; align-items:center; flex-wrap:wrap; margin-bottom:1.5rem;">
+      <div style="font-size:2rem; flex-shrink:0;">🗂️</div>
+      <div style="flex:1; min-width:200px;">
+        <div style="font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:.25rem;">Optional — White-Glove Setup</div>
+        <h4 style="margin-bottom:.3rem;">Want a custom Airtable base instead?</h4>
+        <p style="font-size:.85rem; margin:0;">We configure your Airtable base directly — same dataset, set up with views, filters, and color coding. Reply to your welcome email with "Airtable setup" and we'll handle it within 2–3 business days.</p>
+      </div>
+      <a href="mailto:subscribe@itsdigitally.com?subject=Airtable%20Setup%20Request" class="btn btn-secondary btn-sm" style="flex-shrink:0;" data-external>Request setup →</a>
+    </div>
+
+    <!-- Free guide + support -->
+    <div class="grid-2" style="gap:1.25rem;">
+      <div style="background:var(--amber-lt); border:1px solid rgba(245,158,11,.25); border-radius:var(--radius); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start;">
+        <span style="font-size:1.75rem; flex-shrink:0;">📘</span>
+        <div>
+          <h4 style="margin-bottom:.3rem; font-size:.95rem;">Free Guide: The Canadian Funding Landscape</h4>
+          <p style="font-size:.825rem; color:var(--navy-mid); margin-bottom:.75rem;">Use alongside your workspace to understand the ecosystem before you apply.</p>
+          <a href="guide-full.html" class="btn btn-secondary btn-sm">Read the guide →</a>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start;">
+        <span style="font-size:1.75rem; flex-shrink:0;">💬</span>
+        <div>
+          <h4 style="margin-bottom:.3rem; font-size:.95rem;">Need help?</h4>
+          <p style="font-size:.825rem; margin-bottom:.75rem;">Issues with access, questions about the data, or Airtable setup requests — we respond within 24 hours.</p>
+          <a href="mailto:subscribe@itsdigitally.com" class="btn btn-secondary btn-sm" data-external>Email support →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">BOSs | Business Opportunity Systems</div>
+    <div class="footer-links">
+      <a href="mailto:subscribe@itsdigitally.com">Support</a>
+      <a href="guide-full.html">Free Guide</a>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  // Softr-specific UI logic
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      const url = typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.softrAppUrl : '';
+      const btnWrap = document.getElementById('softr-btn-wrap');
+      const comingSoon = document.getElementById('softr-coming-soon');
+
+      if (url && url.trim() !== '') {
+        // Show the button, hide coming soon
+        if (btnWrap) btnWrap.style.display = 'block';
+        if (comingSoon) comingSoon.style.display = 'none';
+        const btn = document.getElementById('softr-btn');
+        if (btn) {
+          btn.href = url;
+          btn.setAttribute('target', '_blank');
+          btn.setAttribute('rel', 'noopener noreferrer');
+        }
+      } else {
+        // Show coming soon, hide button
+        if (btnWrap) btnWrap.style.display = 'none';
+        if (comingSoon) comingSoon.style.display = 'flex';
+      }
+
+      // Google Sheets button
+      const sheetsUrl = typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.sheetsTemplateUrl : '';
+      const sheetsBtn = document.getElementById('sheets-btn');
+      if (sheetsBtn) {
+        if (sheetsUrl && sheetsUrl.trim() !== '') {
+          sheetsBtn.href = sheetsUrl;
+          sheetsBtn.setAttribute('target', '_blank');
+          sheetsBtn.classList.remove('hidden');
+          sheetsBtn.nextElementSibling?.classList.add('hidden');
+        } else {
+          sheetsBtn.classList.add('hidden');
+          sheetsBtn.nextElementSibling?.classList.remove('hidden');
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>

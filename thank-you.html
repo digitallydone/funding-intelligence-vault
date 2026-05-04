@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Confirmed — Funding Intelligence Vault | BOSs</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body id="thank-you-page">
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-name">BOSs | Business Opportunity Systems</span>
+      <span class="nav-product">Funding Intelligence Vault</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="onboarding-hero">
+  <div class="container">
+    <div style="font-size:3.5rem; margin-bottom:1.25rem;">🎉</div>
+    <div class="label" style="background:rgba(16,185,129,.15); color:#34D399;">Payment confirmed</div>
+    <h1>You're in, <span id="customer-name">friend</span>.</h1>
+    <p>Your early access to the Funding Intelligence Vault is confirmed. Here's everything you need to get started.</p>
+
+    <!-- Transaction ref -->
+    <div id="transaction-ref-block" style="margin-top:1.5rem; display:inline-block; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-sm); padding:.6rem 1.25rem;">
+      <span style="font-size:.75rem; color:rgba(255,255,255,.5); letter-spacing:.05em; text-transform:uppercase;">Transaction reference:</span>
+      <span id="transaction-ref" style="font-family:monospace; font-size:.875rem; color:rgba(255,255,255,.85); margin-left:.5rem;">—</span>
+    </div>
+  </div>
+</section>
+
+<!-- What happens next -->
+<section class="section-sm">
+  <div class="container" style="max-width:720px;">
+
+    <!-- Step cards -->
+    <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2.5rem;">
+
+      <div style="display:flex; gap:1.25rem; align-items:flex-start; background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow-sm);">
+        <div style="width:40px; height:40px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; color:#fff; font-size:.9rem; flex-shrink:0;">1</div>
+        <div>
+          <h4 style="margin-bottom:.35rem;">Access your workspace now</h4>
+          <p style="font-size:.875rem;">Your Google Sheets workspace link is on the next page. Click "Open Workspace" to copy it to your Google Drive — takes about 30 seconds.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:1.25rem; align-items:flex-start; background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow-sm);">
+        <div style="width:40px; height:40px; background:var(--amber); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--navy); font-size:.9rem; flex-shrink:0;">2</div>
+        <div>
+          <h4 style="margin-bottom:.35rem;">Check your email</h4>
+          <p style="font-size:.875rem;">We'll send your access details, onboarding notes, and the free guide to your inbox within a few hours. Check your spam folder if it doesn't arrive.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:1.25rem; align-items:flex-start; background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow-sm);">
+        <div style="width:40px; height:40px; background:var(--blue); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; color:#fff; font-size:.9rem; flex-shrink:0;">3</div>
+        <div>
+          <h4 style="margin-bottom:.35rem;">Optional: Airtable white-glove setup</h4>
+          <p style="font-size:.875rem;">If you'd prefer to work in Airtable, email us and we'll set up your base directly. Just mention "Airtable setup" and we'll follow up with next steps.</p>
+          <a href="mailto:subscribe@itsdigitally.com?subject=Airtable%20Setup%20Request" class="btn btn-secondary btn-sm" style="margin-top:.75rem;" data-external>Request Airtable setup →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Primary CTA -->
+    <div style="text-align:center; background:var(--navy); border-radius:var(--radius-lg); padding:2.5rem; color:#fff;">
+      <div style="font-size:2rem; margin-bottom:.75rem;">🌐</div>
+      <h2 style="color:#fff; margin-bottom:.75rem;">Ready to open your workspace?</h2>
+      <p style="color:rgba(255,255,255,.65); margin-bottom:1.75rem; font-size:.95rem;">Your web app, Google Sheets workspace, and CSV are all waiting. Start searching, filtering, and planning your grant outreach.</p>
+      <a href="customer-start.html" class="btn btn-primary btn-lg">Access Your Workspace →</a>
+      <p style="margin-top:1rem; font-size:.775rem; color:rgba(255,255,255,.4);">Having trouble? <a href="mailto:subscribe@itsdigitally.com" style="color:rgba(255,255,255,.6); text-decoration:underline;">Contact support</a></p>
+    </div>
+
+    <!-- Reassurance -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; text-align:center;">
+      <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-sm); padding:1.25rem;">
+        <div style="font-size:1.5rem; margin-bottom:.4rem;">🔐</div>
+        <div style="font-size:.8rem; font-weight:600; color:var(--navy);">Payment secured</div>
+        <div style="font-size:.75rem; color:var(--muted);">Via Paystack</div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-sm); padding:1.25rem;">
+        <div style="font-size:1.5rem; margin-bottom:.4rem;">📬</div>
+        <div style="font-size:.8rem; font-weight:600; color:var(--navy);">Email delivery</div>
+        <div style="font-size:.75rem; color:var(--muted);">Within a few hours</div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-sm); padding:1.25rem;">
+        <div style="font-size:1.5rem; margin-bottom:.4rem;">💬</div>
+        <div style="font-size:.8rem; font-weight:600; color:var(--navy);">Support available</div>
+        <div style="font-size:.75rem; color:var(--muted);">subscribe@itsdigitally.com</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">BOSs | Business Opportunity Systems</div>
+    <div class="footer-links">
+      <a href="mailto:subscribe@itsdigitally.com">Support</a>
+      <a href="customer-start.html">Open Workspace</a>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

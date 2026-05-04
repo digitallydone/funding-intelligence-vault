@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Early Access — Funding Intelligence Vault | BOSs</title>
+  <meta name="description" content="Get early access to the Funding Intelligence Vault — a ready-to-use grant research workspace for nonprofits and social enterprises." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-name">BOSs | Business Opportunity Systems</span>
+      <span class="nav-product">Funding Intelligence Vault</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#what-you-get">What's included</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+    </ul>
+    <a href="index.html" class="btn btn-ghost btn-sm" style="font-size:.8rem; padding:.4rem .9rem;">← Back</a>
+  </div>
+</nav>
+
+<!-- Page header -->
+<section style="background:var(--navy); padding:3rem 0 2.5rem; text-align:center;">
+  <div class="container">
+    <!-- Progress steps -->
+    <div class="steps" style="justify-content:center; margin-bottom:2rem;">
+      <div class="step active">
+        <div class="step-num">1</div>
+        <span>Your details</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <span>Payment</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <span>Access granted</span>
+      </div>
+    </div>
+
+    <div class="label" style="background:rgba(245,158,11,.15); color:var(--amber);">Early Access — $49 USD</div>
+    <h1 style="color:#fff; font-size:clamp(1.5rem,4vw,2.25rem); margin-bottom:.75rem;">Tell us about your organization</h1>
+    <p style="color:rgba(255,255,255,.65); max-width:480px; margin:0 auto; font-size:.95rem;">We'll use this to tailor your onboarding and prioritize the workspace for your context. Then we'll open the secure checkout.</p>
+  </div>
+</section>
+
+<!-- Main content -->
+<section class="section-sm">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 380px; gap:3rem; align-items:start; max-width:960px; margin:0 auto;">
+
+      <!-- Form -->
+      <div>
+        <div class="form-section" style="max-width:100%;">
+          <div id="form-success" class="alert alert-success hidden">
+            Details saved. Opening secure checkout…
+          </div>
+          <div id="payment-fallback" class="alert alert-warning hidden"></div>
+
+          <form id="request-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Full name <span>*</span></label>
+              <input class="form-control" type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email address <span>*</span></label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="jane@organization.org" required autocomplete="email" />
+              <div class="form-hint">Your workspace access link will be sent here.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="organization">Organization name</label>
+              <input class="form-control" type="text" id="organization" name="organization" placeholder="Community Builders Society" autocomplete="organization" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="role">Your role</label>
+              <select class="form-control" id="role" name="role">
+                <option value="" disabled selected>Select your role…</option>
+                <option value="Executive Director / CEO">Executive Director / CEO</option>
+                <option value="Grant Writer / Manager">Grant Writer / Manager</option>
+                <option value="Development Officer">Development Officer</option>
+                <option value="Consultant / Freelancer">Consultant / Freelancer</option>
+                <option value="Program Manager">Program Manager</option>
+                <option value="Founder / Co-founder">Founder / Co-founder</option>
+                <option value="Board Member">Board Member</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="challenge">What's your biggest funding challenge right now?</label>
+              <textarea class="form-control" id="challenge" name="challenge" rows="3" placeholder="e.g. We can't find funders that match our specific mandate, or we keep missing application deadlines…"></textarea>
+              <div class="form-hint">Optional — helps us tailor your experience.</div>
+            </div>
+
+            <div style="margin-top:1.5rem;">
+              <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn">
+                Continue to Secure Payment →
+              </button>
+            </div>
+
+            <p style="text-align:center; font-size:.775rem; color:var(--light); margin-top:1rem;">
+              🔒 Secure checkout via Paystack · USD $49 one-time · No subscription
+            </p>
+          </form>
+        </div>
+
+        <div class="alert alert-info" style="margin-top:1.25rem; max-width:100%;">
+          <span>💡</span>
+          <span>After payment you'll be redirected to your onboarding page with the Google Sheets workspace link. We'll also send access to your email within a few hours.</span>
+        </div>
+      </div>
+
+      <!-- Sidebar summary -->
+      <div style="position:sticky; top:80px;">
+        <div class="card" style="border:2px solid var(--amber);">
+          <div style="font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--amber-dk); margin-bottom:1rem;">Order Summary</div>
+
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:.75rem; padding-bottom:.75rem; border-bottom:1px solid var(--border);">
+            <div>
+              <div style="font-weight:700; font-size:.95rem; color:var(--navy);">Funding Intelligence Vault</div>
+              <div style="font-size:.8rem; color:var(--muted);">Early Access · One-time payment</div>
+            </div>
+            <div style="font-weight:800; font-size:1.1rem; color:var(--navy);">$49</div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:.55rem; margin-bottom:1.25rem;">
+            <div style="display:flex; gap:.5rem; font-size:.825rem; color:var(--muted);">
+              <span style="color:var(--green); flex-shrink:0;">✓</span>
+              <span>Google Sheets workspace (75+ funders)</span>
+            </div>
+            <div style="display:flex; gap:.5rem; font-size:.825rem; color:var(--muted);">
+              <span style="color:var(--green); flex-shrink:0;">✓</span>
+              <span>17 research fields per opportunity</span>
+            </div>
+            <div style="display:flex; gap:.5rem; font-size:.825rem; color:var(--muted);">
+              <span style="color:var(--green); flex-shrink:0;">✓</span>
+              <span>Fit scores, deadlines &amp; next actions</span>
+            </div>
+            <div style="display:flex; gap:.5rem; font-size:.825rem; color:var(--muted);">
+              <span style="color:var(--green); flex-shrink:0;">✓</span>
+              <span>CSV export (import anywhere)</span>
+            </div>
+            <div style="display:flex; gap:.5rem; font-size:.825rem; color:var(--muted);">
+              <span style="color:var(--green); flex-shrink:0;">✓</span>
+              <span>Free guide: Canadian Funding Landscape</span>
+            </div>
+            <div style="display:flex; gap:.5rem; font-size:.825rem; color:var(--muted);">
+              <span style="color:var(--green); flex-shrink:0;">✓</span>
+              <span>Early-access updates &amp; additions</span>
+            </div>
+          </div>
+
+          <div style="background:var(--amber-lt); border-radius:var(--radius-sm); padding:.85rem 1rem;">
+            <div style="font-size:.775rem; font-weight:700; color:var(--amber-dk); margin-bottom:.25rem;">Optional add-on</div>
+            <div style="font-size:.8rem; color:var(--navy-mid);">Airtable white-glove setup — mention it in your challenge field or email us after purchase.</div>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:.5rem; margin-top:1rem; font-size:.775rem; color:var(--muted);">
+            <span>🔒</span>
+            <span>Payments processed securely by Paystack</span>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:1.25rem;">
+          <a href="guide.html" style="font-size:.825rem; color:var(--muted); text-decoration:underline;">Not ready yet? Read the free guide first →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">BOSs | Business Opportunity Systems</div>
+      <div>Funding Intelligence Vault · Early Access</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="mailto:subscribe@itsdigitally.com">Support</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Paystack SDK -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

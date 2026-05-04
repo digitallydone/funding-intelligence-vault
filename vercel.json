@@ -1,0 +1,35 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.csv",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment; filename=\"funding-intelligence-vault.csv\"" },
+        { "key": "Content-Type", "value": "text/csv; charset=utf-8" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/guide", "destination": "/guide.html" },
+    { "source": "/guide-full", "destination": "/guide-full.html" },
+    { "source": "/start", "destination": "/customer-start.html" },
+    { "source": "/access", "destination": "/request-access.html" },
+    { "source": "/thank-you", "destination": "/thank-you.html" }
+  ]
+}
