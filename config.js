@@ -26,7 +26,7 @@ const SITE_CONFIG = {
   formspreeEndpoint: "https://formspree.io/f/xaqagedq",
 
   // Product delivery links
-  softrAppUrl: "",          // Softr web app URL — PRIMARY delivery (e.g. "https://vault.itsdigitally.com")
+  softrAppUrl: "https://wanetta45801.softr.app",          // Softr web app URL — PRIMARY delivery
   sheetsTemplateUrl: "",    // Google Sheets copy-template link — backup option
   airtableTemplateUrl: "https://airtable.com/appAQQXCDQaXUEsJZ/tblh8VpJvJVRvCImn/viwAck01mBc65LxH8",
   csvDownloadUrl: "funding-intelligence-vault-template.csv",
