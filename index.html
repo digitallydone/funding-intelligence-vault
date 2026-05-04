@@ -22,7 +22,7 @@
 <nav class="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-brand">
-      <img src="assets/logos/bos-logo-3-nav.svg" alt="BOS — Business Opportunity Systems" class="nav-logo">
+      <span class="nav-brand-name">BOS</span>
       <span class="nav-product">Funding Intelligence Vault</span>
     </a>
     <ul class="nav-links">
@@ -270,193 +270,206 @@
 </section>
 
 <!-- ── WHAT YOU GET ────────────────────────────────────────── -->
-<section class="section" id="what-you-get">
+<section class="section dark-section" id="what-you-get">
   <div class="container">
     <div class="text-center">
-      <div class="label">What's Included</div>
-      <h2 class="section-title">A working funding workspace, not a spreadsheet to assemble</h2>
-      <p class="section-intro">Everything in the Vault is organized, labeled, and ready. You're not starting from zero — you're starting from an intelligence system.</p>
+      <div class="label label-light">What's Included</div>
+      <h2 class="section-title text-white" style="margin-top:.75rem;">A working funding workspace,<br>not a spreadsheet to assemble</h2>
+      <p class="section-intro" style="color:rgba(255,255,255,.55); max-width:520px; margin:1rem auto 0;">Everything is organized, labeled, and ready. You're not starting from zero — you're starting from an intelligence system.</p>
     </div>
 
-    <div class="grid-2" style="gap:1.5rem;">
+    <div class="vault-grid">
 
-      <!-- Primary: Softr Web App -->
-      <div class="deliverable-card primary-card" style="grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center;">
-        <div>
-          <div class="deliverable-badge badge-primary-product">Primary Delivery</div>
-          <div style="font-size:2rem; margin-bottom:.75rem;">🌐</div>
-          <h3>Funding Intelligence Vault — Web App</h3>
-          <p style="margin:.75rem 0 1.25rem; font-size:.9rem;">Not a spreadsheet — a real web application. Log in with your email, search and filter 75+ funders instantly, click into any funder for full details, and track your pipeline status — all from your browser. No downloads, no setup, no "make a copy."</p>
-          <div style="display:flex; flex-wrap:wrap; gap:.5rem;">
-            <span class="pill pill-amber">Web app — any device</span>
-            <span class="pill pill-green">Magic link login</span>
-            <span class="pill pill-navy">Search & filter built in</span>
+      <div class="vault-card vault-card--primary">
+        <div class="vault-card-badge">Primary Delivery</div>
+        <div class="vault-card-inner">
+          <div class="vault-card-left">
+            <div class="vault-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3 class="vault-card-title">Funding Intelligence Vault — Web App</h3>
+            <p class="vault-card-desc">Not a spreadsheet — a real web application. Log in, search and filter 75+ funders instantly, click into any funder for full details, and track your pipeline — all from your browser. No downloads, no setup.</p>
+            <div class="vault-pills">
+              <span class="vpill vpill-amber">Any device</span>
+              <span class="vpill vpill-green">Magic link login</span>
+              <span class="vpill vpill-blue">Search &amp; filter built in</span>
+            </div>
+          </div>
+          <div class="vault-card-right">
+            <div class="vault-feature-list-label">What's inside the app</div>
+            <ul class="vault-feature-list">
+              <li>Dashboard — top picks &amp; pipeline summary</li>
+              <li>Full directory — search + 6 filter dimensions</li>
+              <li>High Fit Picks — pre-filtered, sorted by difficulty</li>
+              <li>Pipeline tracker — update status per funder</li>
+              <li>Funder detail pages — all 17 fields + website link</li>
+              <li>Free guide embedded — read without leaving the app</li>
+            </ul>
           </div>
         </div>
-        <div style="background:var(--bg); border-radius:var(--radius-sm); padding:1.25rem;">
-          <div style="font-size:.75rem; font-weight:700; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:.85rem;">What's inside the app:</div>
-          <div style="display:flex; flex-direction:column; gap:.55rem;">
-            <div style="font-size:.82rem; color:var(--navy-mid); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--green); font-weight:700;">→</span> Dashboard with your top picks & pipeline summary</div>
-            <div style="font-size:.82rem; color:var(--navy-mid); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--green); font-weight:700;">→</span> Full directory — search + 6 filter dimensions</div>
-            <div style="font-size:.82rem; color:var(--navy-mid); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--green); font-weight:700;">→</span> High Fit Picks view — pre-filtered, sorted by difficulty</div>
-            <div style="font-size:.82rem; color:var(--navy-mid); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--green); font-weight:700;">→</span> Pipeline tracker — update status per funder</div>
-            <div style="font-size:.82rem; color:var(--navy-mid); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--green); font-weight:700;">→</span> Funder detail pages — all 17 fields + website link</div>
-            <div style="font-size:.82rem; color:var(--navy-mid); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--green); font-weight:700;">→</span> Free guide embedded — read without leaving the app</div>
-          </div>
+      </div>
+
+      <div class="vault-card">
+        <div class="vault-icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
         </div>
+        <h4 class="vault-card-title">Google Sheets Workspace</h4>
+        <p class="vault-card-desc">Copy the full template to your Drive — all 75 funders, 17 columns, filters and conditional formatting already set up. Yours to keep forever.</p>
+        <span class="vpill vpill-blue" style="margin-top:auto;">Backup / power users</span>
       </div>
 
-      <!-- Google Sheets -->
-      <div class="deliverable-card">
-        <div class="deliverable-badge badge-option">Also Included</div>
-        <div style="font-size:2rem; margin-bottom:.75rem;">📊</div>
-        <h3>Google Sheets Workspace</h3>
-        <p style="margin:.6rem 0 1rem; font-size:.875rem;">Prefer a spreadsheet? Copy the full template to your Google Drive — all 75 funders, 17 columns, filters and conditional formatting already set up.</p>
-        <span class="pill pill-blue">Backup / power users</span>
+      <div class="vault-card">
+        <div class="vault-icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h4 class="vault-card-title">CSV Data Export</h4>
+        <p class="vault-card-desc">Import into Notion, Monday.com, ClickUp, your own CRM, or any platform that accepts CSV. Your data, your workflow — no lock-in.</p>
+        <span class="vpill vpill-green" style="margin-top:auto;">Portability</span>
       </div>
 
-      <!-- CSV -->
-      <div class="deliverable-card">
-        <div class="deliverable-badge badge-bonus">Included</div>
-        <div style="font-size:2rem; margin-bottom:.75rem;">📥</div>
-        <h3>CSV Data Export</h3>
-        <p style="margin:.6rem 0 1rem; font-size:.875rem;">Import the raw dataset into any tool you choose — Notion, Monday.com, ClickUp, your own CRM, or any platform that accepts CSV. Your data, your workflow.</p>
-        <span class="pill pill-green">Portability backup</span>
-      </div>
-
-      <!-- Free guide teaser -->
-      <div class="deliverable-card" style="grid-column:1/-1; background:var(--amber-lt); border-color:rgba(245,158,11,.25);">
-        <div class="deliverable-badge" style="background:#fff; color:var(--amber-dk);">Free Bonus</div>
-        <div style="display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:center;">
-          <div style="font-size:2.5rem;">📘</div>
+      <div class="vault-card vault-card--bonus">
+        <div class="vault-card-badge vault-card-badge--gold">Free Bonus</div>
+        <div style="display:grid; grid-template-columns:auto 1fr; gap:1.75rem; align-items:center;">
+          <div class="vault-icon-wrap vault-icon-wrap--lg">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
           <div>
-            <h3 style="color:var(--navy);">Free Guide: The Canadian Funding Landscape — Where to Start</h3>
-            <p style="margin:.5rem 0 1rem; font-size:.875rem; color:var(--navy-mid);">A clear orientation for anyone new to Canadian grant funding. Understand who funds what, how the landscape is structured, and how to prioritize your outreach. Included with early access or download free.</p>
-            <a href="guide.html" class="btn btn-secondary btn-sm">Read the free guide →</a>
+            <h4 class="vault-card-title" style="color:#fff;">Free Guide: The Canadian Funding Landscape — Where to Start</h4>
+            <p class="vault-card-desc" style="color:rgba(255,255,255,.6); margin:.5rem 0 1.25rem;">A clear orientation for anyone new to Canadian grant funding. Understand who funds what, how the landscape is structured, and how to prioritize your outreach.</p>
+            <a href="guide.html" class="btn btn-ghost-amber btn-sm">Read the free guide →</a>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
-<section class="section" style="background:#fff;">
+<section class="section dark-section-alt">
   <div class="container">
     <div class="text-center">
-      <div class="label">Early Feedback</div>
-      <h2 class="section-title">What people in the field are saying</h2>
+      <div class="label label-light">Early Feedback</div>
+      <h2 class="section-title text-white" style="margin-top:.75rem;">What people in the field are saying</h2>
     </div>
-    <div class="grid-3">
-      <div class="testimonial-card">
-        <div class="testimonial-quote">Having the fit score and next action already mapped out is the part that saves the most time. I used to spend an afternoon just figuring out if an opportunity was worth pursuing. Now it takes five minutes.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">MT</div>
+    <div class="tcard-grid">
+
+      <div class="tcard">
+        <svg class="tcard-icon" viewBox="0 0 40 30" fill="currentColor"><path d="M0 30V18C0 7.5 6.75 1.5 20.25 0L22.5 3.75C15 5.25 11.25 9 10.5 15H17.5V30H0zm22.5 0V18C22.5 7.5 29.25 1.5 42.75 0L45 3.75c-7.5 1.5-11.25 5.25-12 11.25H40V30H22.5z"/></svg>
+        <p class="tcard-quote">Having the fit score and next action already mapped out saves the most time. I used to spend an afternoon just figuring out if an opportunity was worth pursuing. Now it takes five minutes.</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">MT</div>
           <div>
-            <div class="author-name">M. Thompson</div>
-            <div class="author-title">Executive Director, Community Health Nonprofit · Ontario</div>
+            <div class="tcard-name">M. Thompson</div>
+            <div class="tcard-role">Executive Director, Community Health Nonprofit · Ontario</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">I've built my own grant tracker three times and it's never stayed current. This is the first time I've started with a system that was already populated. The structure alone was worth the price.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">LR</div>
+
+      <div class="tcard">
+        <svg class="tcard-icon" viewBox="0 0 40 30" fill="currentColor"><path d="M0 30V18C0 7.5 6.75 1.5 20.25 0L22.5 3.75C15 5.25 11.25 9 10.5 15H17.5V30H0zm22.5 0V18C22.5 7.5 29.25 1.5 42.75 0L45 3.75c-7.5 1.5-11.25 5.25-12 11.25H40V30H22.5z"/></svg>
+        <p class="tcard-quote">I've built my own grant tracker three times and it's never stayed current. This is the first time I've started with a system already populated. The structure alone was worth the price.</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">LR</div>
           <div>
-            <div class="author-name">L. Rousseau</div>
-            <div class="author-title">Independent Grant Writer · Québec</div>
+            <div class="tcard-name">L. Rousseau</div>
+            <div class="tcard-role">Independent Grant Writer · Québec</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">As a small team, we can't afford a grants database subscription. This gave us the same starting intelligence at a fraction of the cost — and we actually understood how to use it immediately.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">SA</div>
+
+      <div class="tcard">
+        <svg class="tcard-icon" viewBox="0 0 40 30" fill="currentColor"><path d="M0 30V18C0 7.5 6.75 1.5 20.25 0L22.5 3.75C15 5.25 11.25 9 10.5 15H17.5V30H0zm22.5 0V18C22.5 7.5 29.25 1.5 42.75 0L45 3.75c-7.5 1.5-11.25 5.25-12 11.25H40V30H22.5z"/></svg>
+        <p class="tcard-quote">As a small team, we can't afford a grants database subscription. This gave us the same starting intelligence at a fraction of the cost — and we understood how to use it immediately.</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">SA</div>
           <div>
-            <div class="author-name">S. Abubakar</div>
-            <div class="author-title">Founder, Social Enterprise · Alberta</div>
+            <div class="tcard-name">S. Abubakar</div>
+            <div class="tcard-role">Founder, Social Enterprise · Alberta</div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ── PRICING ────────────────────────────────────────────── -->
-<section class="section" id="pricing">
+<section class="section dark-section" id="pricing">
   <div class="container">
     <div class="text-center">
-      <div class="label">Early Access Offer</div>
-      <h2 class="section-title">One price. Everything included.</h2>
-      <p class="section-intro">Early access pricing is limited. When the full product launches publicly, the price increases. Lock in $49 now.</p>
+      <div class="label label-light">Early Access Offer</div>
+      <h2 class="section-title text-white" style="margin-top:.75rem;">One price. Everything included.</h2>
+      <p class="section-intro" style="color:rgba(255,255,255,.55); max-width:480px; margin:1rem auto 0;">Early access pricing is limited. When the full product launches publicly, the price increases. Lock in $49 now.</p>
     </div>
 
-    <div class="pricing-card">
-      <div class="label" style="background:rgba(245,158,11,.2); color:var(--amber);">Funding Intelligence Vault</div>
-      <div class="price-display">
-        <span class="price-currency">USD</span>
-        <span class="price-amount">49</span>
-        <span class="price-period">one-time · early access</span>
+    <div class="pricing-wrap">
+      <div class="pricing-card-v2">
+        <div class="pricing-card-header">
+          <span class="pricing-product-label">Funding Intelligence Vault</span>
+          <div class="price-display">
+            <span class="price-currency">USD</span>
+            <span class="price-amount">49</span>
+            <span class="price-period">one-time · early access</span>
+          </div>
+        </div>
+        <div class="pricing-card-body">
+          <ul class="price-list">
+            <li>Web app — search, filter &amp; track 75+ Canadian funders in your browser</li>
+            <li>Dashboard, Directory, High Fit Picks &amp; Pipeline tracker views</li>
+            <li>17 data fields per funder: eligibility, fit score, deadline, amount, difficulty</li>
+            <li>Google Sheets workspace — full dataset as a copy-template</li>
+            <li>CSV export — import into Notion, Monday.com, ClickUp, or any tool</li>
+            <li>Free bonus: <em>The Canadian Funding Landscape: Where to Start</em> guide</li>
+            <li>Priority access to future updates and expanded datasets</li>
+          </ul>
+          <a href="request-access.html" class="btn btn-primary btn-full btn-lg" style="margin-top:.5rem;">
+            Get Early Access — $49 USD
+          </a>
+          <div class="guarantee">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Secure checkout via Paystack. Not satisfied within 7 days? Contact us and we'll make it right.</span>
+          </div>
+          <p style="text-align:center; margin-top:1rem; font-size:.775rem; color:rgba(255,255,255,.35);">
+            Optional Airtable white-glove setup available. Questions? <a href="mailto:subscribe@itsdigitally.com" style="color:rgba(255,255,255,.5); text-decoration:underline;">Email us</a>
+          </p>
+        </div>
       </div>
-
-      <ul class="price-list">
-        <li>Web app access — search, filter, and track 75+ Canadian funders in your browser</li>
-        <li>Dashboard, Funding Directory, High Fit Picks, and Pipeline tracker views</li>
-        <li>17 data fields per funder: eligibility, fit score, deadline, amount, difficulty, and more</li>
-        <li>Google Sheets workspace — full dataset as a copy-template backup</li>
-        <li>CSV export — import into Notion, Monday.com, ClickUp, or any tool</li>
-        <li>Free bonus: <em>The Canadian Funding Landscape: Where to Start</em> guide</li>
-        <li>Early access to future updates and expanded datasets</li>
-      </ul>
-
-      <a href="request-access.html" class="btn btn-primary btn-full btn-lg">
-        Get Early Access — $49 USD
-      </a>
-
-      <div class="guarantee">
-        <span style="font-size:1.25rem;">🔒</span>
-        <span>Secure checkout via Paystack. If you're not satisfied within 7 days, contact us and we'll make it right.</span>
-      </div>
-
-      <p style="text-align:center; margin-top:1rem; font-size:.775rem; color:rgba(255,255,255,.4);">
-        Optional: Airtable white-glove setup available at checkout. Questions?
-        <a href="mailto:subscribe@itsdigitally.com" style="color:rgba(255,255,255,.6); text-decoration:underline;">Email us</a>
-      </p>
     </div>
   </div>
 </section>
 
 <!-- ── FAQ ────────────────────────────────────────────────── -->
-<section class="section" style="background:#fff;">
+<section class="section dark-section-alt">
   <div class="container">
     <div class="text-center">
-      <div class="label">FAQ</div>
-      <h2 class="section-title">Common questions</h2>
+      <div class="label label-light">FAQ</div>
+      <h2 class="section-title text-white" style="margin-top:.75rem;">Common questions</h2>
     </div>
-    <div style="max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:1rem;">
-      <div class="faq-item">
-        <div class="faq-q">Is this a spreadsheet I have to fill in myself?</div>
-        <div class="faq-a">No — and it's not a spreadsheet at all. The primary delivery is a web app (built on Softr) where you log in, search, filter, and track funders directly in your browser. A Google Sheets copy-template and CSV are also included as backup formats. Nothing to fill in. Everything is already researched and organized.</div>
+    <div class="faq-list">
+      <div class="faq-item-dark">
+        <div class="faq-q-dark">Is this a spreadsheet I have to fill in myself?</div>
+        <div class="faq-a-dark">No — and it's not a spreadsheet at all. The primary delivery is a web app where you log in, search, filter, and track funders in your browser. A Google Sheets copy-template and CSV are also included. Nothing to fill in — everything is already researched and organized.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">What funding opportunities are included?</div>
-        <div class="faq-a">The current dataset focuses on Canadian funding opportunities across federal programs, provincial grants, and private foundations. Sectors include arts & culture, community development, environment, health, youth, education, Indigenous programming, and social enterprise. The data includes deadline types, amounts, eligibility, and fit scores.</div>
+      <div class="faq-item-dark">
+        <div class="faq-q-dark">What funding opportunities are included?</div>
+        <div class="faq-a-dark">75+ Canadian funding opportunities across federal programs, provincial grants, and private foundations. Sectors include arts &amp; culture, community development, environment, health, youth, education, Indigenous programming, and social enterprise — with deadline types, amounts, eligibility, and fit scores.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">What is the Airtable white-glove setup?</div>
-        <div class="faq-a">If you'd prefer to work in Airtable rather than Google Sheets, we'll configure your Airtable base with the same data and structure, set up views for filtering and sorting, and deliver it ready to use. This is an optional add-on — just mention it when you contact us after purchase.</div>
+      <div class="faq-item-dark">
+        <div class="faq-q-dark">What is the Airtable white-glove setup?</div>
+        <div class="faq-a-dark">An optional add-on where we configure your Airtable base with the same data and structure, set up views for filtering and sorting, and deliver it ready to use. Just mention it when you contact us after purchase.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">What does "early access" mean?</div>
-        <div class="faq-a">Early access customers get in at the lowest price before the product launches publicly. You also get priority access to future dataset updates, expanded sectors, and new features as the Vault grows.</div>
+      <div class="faq-item-dark">
+        <div class="faq-q-dark">What does "early access" mean?</div>
+        <div class="faq-a-dark">Early access customers get in at the lowest price before the product launches publicly. You also get priority access to future dataset updates, expanded sectors, and new features as the Vault grows.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">How do I get access after I pay?</div>
-        <div class="faq-a">You'll be redirected to a confirmation page immediately after payment. The Google Sheets link and onboarding instructions are delivered there and by email within a few hours of your purchase.</div>
+      <div class="faq-item-dark">
+        <div class="faq-q-dark">How do I get access after I pay?</div>
+        <div class="faq-a-dark">You're redirected to a confirmation page immediately after payment. The Google Sheets link and onboarding instructions are delivered there and by email within a few hours of your purchase.</div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">Is this useful if I'm not in Canada?</div>
-        <div class="faq-a">The current dataset is focused on Canadian funders. If you're a Canadian-based organization or working with Canadian clients, this is designed specifically for you. Future editions may expand to other geographies.</div>
+      <div class="faq-item-dark">
+        <div class="faq-q-dark">Is this useful if I'm not in Canada?</div>
+        <div class="faq-a-dark">The current dataset is focused on Canadian funders — designed specifically for Canadian-based organizations or consultants working with Canadian clients. Future editions may expand to other geographies.</div>
       </div>
     </div>
   </div>
@@ -487,7 +500,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div>
-      <img src="assets/logos/bos-logo-3-white.svg" alt="BOS — Business Opportunity Systems" class="footer-logo">
+      <div class="footer-brand">BOS <span style="opacity:.4;font-weight:400;">| Business Opportunity Systems</span></div>
       <div style="margin-top:.25rem;">Funding Intelligence Vault · Early Access</div>
     </div>
     <div class="footer-links">

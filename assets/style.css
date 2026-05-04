@@ -125,11 +125,10 @@ p  { color: var(--muted); }
   display: block;
 }
 .nav-brand-name {
-  font-size: .65rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--amber);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  color: #fff;
 }
 .nav-product {
   font-size: .9rem;
@@ -493,7 +492,306 @@ p  { color: var(--muted); }
   border-radius: 100px;
 }
 
-/* ── What You Get ── */
+/* ── Dark Section Backgrounds ── */
+.dark-section {
+  background: linear-gradient(160deg, #080f1e 0%, #0d1a30 50%, #0a1525 100%);
+  position: relative;
+  overflow: hidden;
+}
+.dark-section::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(245,158,11,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.dark-section-alt {
+  background: linear-gradient(160deg, #0b1425 0%, #0f1d35 60%, #0b1525 100%);
+  position: relative;
+  overflow: hidden;
+}
+.dark-section-alt::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; left: -150px;
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(59,130,246,.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Vault Deliverable Grid ── */
+.vault-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  margin-top: 3.5rem;
+}
+.vault-card {
+  background: rgba(255,255,255,.03);
+  padding: 2.25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  transition: background var(--transition);
+}
+.vault-card:hover { background: rgba(255,255,255,.055); }
+.vault-card--primary {
+  grid-column: 1 / -1;
+  background: rgba(245,158,11,.05);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.vault-card--primary:hover { background: rgba(245,158,11,.08); }
+.vault-card--bonus {
+  grid-column: 1 / -1;
+  background: rgba(245,158,11,.04);
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.vault-card--bonus:hover { background: rgba(245,158,11,.07); }
+.vault-card-badge {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .25rem .6rem;
+  border-radius: 100px;
+  background: rgba(245,158,11,.15);
+  color: var(--amber);
+  border: 1px solid rgba(245,158,11,.25);
+}
+.vault-card-badge--gold {
+  background: rgba(245,158,11,.2);
+  color: #fbbf24;
+  border-color: rgba(245,158,11,.35);
+}
+.vault-card-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.vault-card-left { display: flex; flex-direction: column; gap: .75rem; }
+.vault-card-right {
+  background: rgba(0,0,0,.2);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.vault-feature-list-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 1rem;
+}
+.vault-feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.vault-feature-list li {
+  font-size: .84rem;
+  color: rgba(255,255,255,.65);
+  padding-left: 1.1rem;
+  position: relative;
+  line-height: 1.5;
+}
+.vault-feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: .55em;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: .7;
+}
+.vault-icon-wrap {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: rgba(245,158,11,.1);
+  border: 1px solid rgba(245,158,11,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.vault-icon-wrap--lg { width: 56px; height: 56px; border-radius: 14px; }
+.vault-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.vault-card-desc {
+  font-size: .875rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.65;
+  margin: 0;
+}
+.vault-pills { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .25rem; }
+.vpill {
+  font-size: .7rem;
+  font-weight: 600;
+  padding: .2rem .65rem;
+  border-radius: 100px;
+  letter-spacing: .04em;
+}
+.vpill-amber { background: rgba(245,158,11,.15); color: #fbbf24; border: 1px solid rgba(245,158,11,.25); }
+.vpill-green { background: rgba(16,185,129,.12); color: #34d399; border: 1px solid rgba(16,185,129,.2); }
+.vpill-blue  { background: rgba(59,130,246,.12);  color: #60a5fa; border: 1px solid rgba(59,130,246,.2); }
+.btn-ghost-amber {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--amber);
+  border: 1px solid rgba(245,158,11,.35);
+  padding: .5rem 1.1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition);
+}
+.btn-ghost-amber:hover { background: rgba(245,158,11,.1); border-color: rgba(245,158,11,.6); }
+
+/* ── Testimonials Dark ── */
+.tcard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.07);
+  margin-top: 3.5rem;
+}
+.tcard {
+  background: rgba(255,255,255,.03);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: background var(--transition);
+}
+.tcard:hover { background: rgba(255,255,255,.06); }
+.tcard-icon {
+  width: 24px;
+  height: 18px;
+  color: var(--amber);
+  opacity: .45;
+  flex-shrink: 0;
+}
+.tcard-quote {
+  font-size: .9rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+}
+.tcard-author {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.tcard-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(245,158,11,.25), rgba(245,158,11,.05));
+  border: 1px solid rgba(245,158,11,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.tcard-name { font-size: .875rem; font-weight: 600; color: #fff; }
+.tcard-role { font-size: .75rem; color: rgba(255,255,255,.4); margin-top: .15rem; }
+
+/* ── Pricing V2 ── */
+.pricing-wrap { display: flex; justify-content: center; margin-top: 3.5rem; }
+.pricing-card-v2 {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 80px rgba(245,158,11,.06), 0 0 0 1px rgba(245,158,11,.1);
+}
+.pricing-card-header {
+  background: rgba(245,158,11,.06);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: 2.5rem 2.5rem 2rem;
+}
+.pricing-product-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.pricing-card-body { padding: 2rem 2.5rem 2.5rem; }
+
+/* ── FAQ Dark ── */
+.faq-list {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+}
+.faq-item-dark {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  position: relative;
+  padding-left: 1.25rem;
+}
+.faq-item-dark::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 1.75rem;
+  width: 3px; height: calc(100% - 3.5rem);
+  background: rgba(245,158,11,.0);
+  border-radius: 2px;
+  transition: background .25s ease;
+}
+.faq-item-dark:hover::before { background: rgba(245,158,11,.5); }
+.faq-q-dark {
+  font-size: .975rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: .6rem;
+  line-height: 1.4;
+}
+.faq-a-dark {
+  font-size: .875rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.7;
+}
+
+/* ── Responsive for new sections ── */
+@media (max-width: 860px) {
+  .vault-grid { grid-template-columns: 1fr; }
+  .vault-card--primary, .vault-card--bonus { grid-column: 1; }
+  .vault-card-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .tcard-grid { grid-template-columns: 1fr; }
+  .pricing-card-v2 { max-width: 100%; }
+  .pricing-card-header, .pricing-card-body { padding-left: 1.75rem; padding-right: 1.75rem; }
+}
+
+/* ── What You Get (legacy, kept for other pages) ── */
 .deliverable-card {
   background: var(--card);
   border: 1px solid var(--border);
