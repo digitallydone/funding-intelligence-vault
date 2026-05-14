@@ -102,7 +102,15 @@
       return false;
     }
 
-    window.location.href = checkoutUrl;
+    submitLemonCheckoutForm(customer);
+
+    // Fallback in case the native form handoff is blocked or interrupted.
+    window.setTimeout(function () {
+      if (window.location.href.indexOf("lemonsqueezy.com") === -1) {
+        window.location.replace(checkoutUrl);
+      }
+    }, 250);
+
     return true;
   }
 
@@ -129,6 +137,50 @@
       console.warn("[site.js] Invalid Lemon Squeezy URL:", err.message);
       return null;
     }
+  }
+
+  function submitLemonCheckoutForm(customer) {
+    const baseUrl = SITE_CONFIG?.lemonSqueezyCheckoutUrl;
+    if (!baseUrl) return;
+
+    try {
+      const url = new URL(baseUrl);
+      const form = document.createElement("form");
+      form.method = "GET";
+      form.action = url.origin + url.pathname;
+      form.style.display = "none";
+
+      // Preserve any query params already present on the shared checkout URL.
+      url.searchParams.forEach((value, key) => {
+        appendHiddenInput(form, key, value);
+      });
+
+      if (customer?.email) {
+        appendHiddenInput(form, "checkout[email]", customer.email);
+      }
+      if (customer?.name) {
+        appendHiddenInput(form, "checkout[name]", customer.name);
+      }
+      if (customer?.organization) {
+        appendHiddenInput(form, "checkout[custom][organization]", customer.organization);
+      }
+      if (customer?.role) {
+        appendHiddenInput(form, "checkout[custom][role]", customer.role);
+      }
+
+      document.body.appendChild(form);
+      form.submit();
+    } catch (err) {
+      console.warn("[site.js] Checkout form submission error:", err.message);
+    }
+  }
+
+  function appendHiddenInput(form, name, value) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
   }
 
   function showPaymentFallback(message) {
