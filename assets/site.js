@@ -147,7 +147,7 @@
     const form = document.getElementById("request-form");
     if (!form) return;
 
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
 
       const submitBtn = form.querySelector('[type="submit"]');
@@ -157,52 +157,53 @@
 
       setButtonLoading(submitBtn, true);
 
-      // 1. Submit to Formspree
-      const submitted = await submitToFormspree(data);
-
-      // 2. Store email for checkout
+      // Store lead details before redirect so the thank-you page can reuse them.
       storeEmail(data.email);
-
-      // 3. Store lead data
       storeLead(data);
 
-      setButtonLoading(submitBtn, false);
+      // Fire the lead capture in the background. Checkout should never wait on this.
+      submitToFormspreeInBackground(data);
 
-      if (submitted) {
-        showFormSuccess("Details saved. Redirecting to secure checkout…");
-        await sleep(700);
-      }
-
+      showFormSuccess("Details saved. Redirecting to secure checkout…");
       launchLemonCheckout(data);
     });
   }
 
-  async function submitToFormspree(data) {
+  function submitToFormspreeInBackground(data) {
     const endpoint = SITE_CONFIG?.formspreeEndpoint;
     if (!endpoint) {
       console.info("[site.js] Formspree endpoint not configured — skipping form submission.");
-      return false;
+      return;
     }
 
+    const payload = JSON.stringify({
+      name: data.name,
+      email: data.email,
+      organization: data.organization,
+      role: data.role,
+      challenge: data.challenge,
+      product: SITE_CONFIG.productName,
+      source: window.location.href,
+    });
+
     try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          organization: data.organization,
-          role: data.role,
-          challenge: data.challenge,
-          product: SITE_CONFIG.productName,
-          source: window.location.href,
-        }),
-      });
-      return res.ok;
+      if (navigator.sendBeacon) {
+        const blob = new Blob([payload], { type: "application/json" });
+        navigator.sendBeacon(endpoint, blob);
+        return;
+      }
     } catch (err) {
-      console.warn("[site.js] Formspree error:", err.message);
-      return false;
+      console.warn("[site.js] Formspree sendBeacon error:", err.message);
     }
+
+    fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: payload,
+      keepalive: true,
+    }).catch((err) => {
+      console.warn("[site.js] Formspree background error:", err.message);
+    });
   }
 
   function validateForm(data) {
