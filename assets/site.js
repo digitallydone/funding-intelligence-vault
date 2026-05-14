@@ -126,7 +126,14 @@
       sessionStorage.setItem("fiv_checkout_url", checkoutUrl);
     } catch (_) {}
 
-    window.location.href = "checkout-redirect";
+    const params = new URLSearchParams();
+    if (customer?.name) params.set("name", customer.name);
+    if (customer?.email) params.set("email", customer.email);
+    if (customer?.organization) params.set("organization", customer.organization);
+    if (customer?.role) params.set("role", customer.role);
+    if (customer?.challenge) params.set("challenge", customer.challenge);
+
+    window.location.href = "checkout" + (params.toString() ? "?" + params.toString() : "");
     return true;
   }
 
@@ -203,7 +210,13 @@
     const manualLink = document.getElementById("manual-checkout-link");
     if (!manualLink) return;
 
-    const checkoutUrl = getStoredCheckoutUrl();
+    const customer = getCheckoutCustomerFromPage();
+    if (customer?.email) {
+      storeEmail(customer.email);
+      storeLead(customer);
+    }
+
+    const checkoutUrl = buildLemonCheckoutUrl(customer) || getStoredCheckoutUrl();
     if (!checkoutUrl) {
       const errorEl = document.getElementById("checkout-error");
       if (errorEl) {
@@ -218,8 +231,19 @@
     manualLink.href = checkoutUrl;
 
     window.setTimeout(function () {
-      manualLink.click();
-    }, 150);
+      window.location.replace(checkoutUrl);
+    }, 100);
+  }
+
+  function getCheckoutCustomerFromPage() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      name: params.get("name") || "",
+      email: params.get("email") || "",
+      organization: params.get("organization") || "",
+      role: params.get("role") || "",
+      challenge: params.get("challenge") || "",
+    };
   }
 
   function showPaymentFallback(message) {
@@ -239,12 +263,13 @@
     if (!form) return;
 
     form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
       const submitBtn = form.querySelector('[type="submit"]');
       const data = getFormData(form);
 
-      if (!validateForm(data)) return;
+      if (!validateForm(data)) {
+        e.preventDefault();
+        return;
+      }
 
       setButtonLoading(submitBtn, true);
 
@@ -252,11 +277,8 @@
       storeEmail(data.email);
       storeLead(data);
 
-      // Fire the lead capture in the background. Checkout should never wait on this.
+      // Fire the lead capture in the background. Native form submission handles navigation.
       submitToFormspreeInBackground(data);
-
-      showFormSuccess("Details saved. Redirecting to secure checkout…");
-      redirectToCheckoutPage(data);
     });
   }
 
