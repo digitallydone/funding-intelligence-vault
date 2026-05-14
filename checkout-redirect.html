@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to Checkout | BOS</title>
+  <meta name="description" content="Redirecting you to secure checkout for the Funding Intelligence Vault." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body style="background:var(--navy); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:2rem;">
+  <main style="width:min(100%, 640px);">
+    <div class="card" style="padding:2rem; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); color:#fff; text-align:center;">
+      <div class="label" style="background:rgba(245,158,11,.16); color:var(--amber);">Secure Checkout</div>
+      <h1 style="margin:1rem 0 .75rem; color:#fff; font-size:clamp(1.75rem,4vw,2.4rem);">Taking you to Lemon Squeezy…</h1>
+      <p style="margin:0 auto 1.5rem; max-width:460px; color:rgba(255,255,255,.7);">
+        If your browser pauses here, use the button below to continue straight to checkout.
+      </p>
+      <div id="checkout-error" class="alert alert-warning hidden" style="margin-bottom:1rem; text-align:left;"></div>
+      <a id="manual-checkout-link" href="#" class="btn btn-primary btn-lg btn-full" style="max-width:420px; margin:0 auto;">
+        Continue to Secure Checkout
+      </a>
+      <p style="margin-top:1rem; font-size:.8rem; color:rgba(255,255,255,.45);">
+        BOS | Business Opportunity Systems
+      </p>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

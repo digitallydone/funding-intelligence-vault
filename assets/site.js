@@ -14,6 +14,7 @@
     bindExternalLinks();
     bindLemonCheckoutButton();
     bindRequestForm();
+    bindCheckoutRedirectPage();
     bindThankYouPage();
     bindCustomerStartPage();
     bindStickyNav();
@@ -85,7 +86,7 @@
     btn.addEventListener("click", function () {
       const email = getStoredEmail() || promptForEmail();
       if (!email) return;
-      launchLemonCheckout({ email: email });
+      redirectToCheckoutPage({ email: email });
     });
   }
 
@@ -111,6 +112,21 @@
       }
     }, 250);
 
+    return true;
+  }
+
+  function redirectToCheckoutPage(customer) {
+    const checkoutUrl = buildLemonCheckoutUrl(customer);
+    if (!checkoutUrl) {
+      showPaymentFallback(SITE_CONFIG?.lemonSqueezyFallbackMessage || "Checkout is unavailable right now.");
+      return false;
+    }
+
+    try {
+      sessionStorage.setItem("fiv_checkout_url", checkoutUrl);
+    } catch (_) {}
+
+    window.location.href = "checkout-redirect";
     return true;
   }
 
@@ -183,6 +199,29 @@
     form.appendChild(input);
   }
 
+  function bindCheckoutRedirectPage() {
+    const manualLink = document.getElementById("manual-checkout-link");
+    if (!manualLink) return;
+
+    const checkoutUrl = getStoredCheckoutUrl();
+    if (!checkoutUrl) {
+      const errorEl = document.getElementById("checkout-error");
+      if (errorEl) {
+        errorEl.textContent = "We couldn't prepare your checkout automatically. Please go back and try again, or contact support if the issue continues.";
+        errorEl.classList.remove("hidden");
+      }
+      manualLink.textContent = "Return to Access Form";
+      manualLink.href = "request-access";
+      return;
+    }
+
+    manualLink.href = checkoutUrl;
+
+    window.setTimeout(function () {
+      manualLink.click();
+    }, 150);
+  }
+
   function showPaymentFallback(message) {
     const container = document.getElementById("payment-fallback");
     if (container) {
@@ -217,7 +256,7 @@
       submitToFormspreeInBackground(data);
 
       showFormSuccess("Details saved. Redirecting to secure checkout…");
-      launchLemonCheckout(data);
+      redirectToCheckoutPage(data);
     });
   }
 
@@ -410,6 +449,9 @@
   }
   function getStoredTransactionRef() {
     try { return sessionStorage.getItem("fiv_txref"); } catch (_) { return null; }
+  }
+  function getStoredCheckoutUrl() {
+    try { return sessionStorage.getItem("fiv_checkout_url"); } catch (_) { return null; }
   }
 
   // ── Utils ─────────────────────────────────────────────────────

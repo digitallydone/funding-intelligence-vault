@@ -28,6 +28,7 @@
   "rewrites": [
     { "source": "/guide", "destination": "/guide.html" },
     { "source": "/guide-full", "destination": "/guide-full.html" },
+    { "source": "/checkout", "destination": "/checkout-redirect.html" },
     { "source": "/start", "destination": "/customer-start.html" },
     { "source": "/access", "destination": "/request-access.html" },
     { "source": "/thank-you", "destination": "/thank-you.html" }
