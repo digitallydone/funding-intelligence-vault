@@ -1,84 +1,54 @@
 # Funding Intelligence Vault
-**BOS | Business Opportunity Systems**
 
-A premium static website for the Funding Intelligence Vault — a ready-to-use grant research workspace for Canadian nonprofits, NGOs, social enterprises, and grant writers.
-
----
-
-## Quick Start
-
-### Local development
-
-No build step required. Open any `.html` file directly in a browser, or serve with any static server:
-
-```bash
-# Python (built-in)
-python3 -m http.server 3000
-
-# Node (npx)
-npx serve .
-
-# VS Code: use the Live Server extension
-```
-
-### Deploy to Vercel
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-```
-
-Or connect your GitHub repository to Vercel for automatic deployments.
+Static marketing and delivery site for **BOS | Business Opportunity Systems**.
 
 ---
 
 ## Configuration
 
-Before going live, fill in `config.js`:
+Edit `config.js` with your live values:
 
-```javascript
+```js
 const SITE_CONFIG = {
-  paystackPublicKey: "pk_live_xxxxxxxxxxxx",   // Your Paystack public key
-  paystackCurrency: "USD",                      // USD or GHS/NGN if USD not enabled
-  paystackAmount: 4900,                         // In subunits (4900 = $49.00)
-  formspreeEndpoint: "https://formspree.io/f/yourformid",
-  sheetsTemplateUrl: "https://docs.google.com/spreadsheets/d/...",
-  airtableTemplateUrl: "",                      // Leave empty until ready
+  brandName: "BOS | Business Opportunity Systems",
+  productName: "Funding Intelligence Vault",
+  priceLabel: "$49 USD",
+  earlyAccessLabel: "Early Access — $49",
+  lemonSqueezyCheckoutUrl: "https://your-store.lemonsqueezy.com/checkout/buy/your-variant-id",
+  lemonSqueezyFallbackMessage:
+    "Checkout is temporarily unavailable. Please email us at subscribe@itsdigitally.com to complete your purchase manually.",
+  formspreeEndpoint: "https://formspree.io/f/your-form-id",
+  softrAppUrl: "https://funding-vault.softr.app",
+  sheetsTemplateUrl: "https://docs.google.com/spreadsheets/d/.../copy",
+  airtableTemplateUrl: "https://airtable.com/...",
+  csvDownloadUrl: "funding-intelligence-vault-template.csv",
   supportEmail: "subscribe@itsdigitally.com",
+  siteUrl: "https://funding-intelligence-vault.vercel.app"
 };
 ```
 
-**Buttons linked to empty config values are automatically hidden** — no broken links.
+Use the original Lemon Squeezy share URL that contains `/checkout/buy/`. Do not use the cart URL generated after someone opens checkout.
 
 ---
 
-## File Structure
+## Structure
 
-```
-funding-intelligence-vault/
+```text
+.
 ├── index.html                          Landing page
-├── request-access.html                 Buyer form + Paystack checkout
+├── guide.html                          Free guide landing page
+├── guide-full.html                     Full guide article page
+├── request-access.html                 Buyer form + Lemon Squeezy handoff
 ├── thank-you.html                      Post-payment confirmation
-├── customer-start.html                 Customer onboarding / workspace access
-├── guide.html                          Free guide overview
-├── guide-full.html                     Full free guide (5 chapters)
-├── config.js                           Site configuration (fill in before launch)
+├── customer-start.html                 Delivery / access page
+├── config.js                           Site-wide configuration
 ├── assets/
-│   ├── style.css                       Full design system
-│   └── site.js                         Payment, form, and UI logic
-├── docs/
-│   ├── customer-delivery-pack.md       Delivery checklist and email templates
-│   ├── customer-onboarding-playbook.md Customer-facing onboarding guide
-│   ├── product-delivery-notes.md       Internal product specs and SLAs
-│   ├── outreach-kickoff-pack.md        Launch messaging and email templates
-│   ├── airtable-base-spec.md           Airtable white-glove setup spec
-│   └── sheets-template-setup.md       Google Sheets template creation guide
-├── funding-intelligence-vault-template.csv   75 funding opportunities (17 columns)
-├── vercel.json                         Vercel deployment config
-├── .gitignore
+│   ├── style.css                       Shared styling
+│   ├── site.js                         Checkout, form, and UI logic
+│   └── logos/                          Brand assets
+├── docs/                               Internal operating notes
+├── funding-intelligence-vault-template.csv
+├── vercel.json
 └── README.md
 ```
 
@@ -86,13 +56,13 @@ funding-intelligence-vault/
 
 ## Payment Flow
 
-1. Customer fills in `request-access.html` form
-2. Form data submits to **Formspree** (lead capture)
-3. **Paystack** checkout opens in a modal
-4. On success → redirect to `thank-you.html?ref=TRANSACTION_REF&status=paid`
-5. Customer navigates to `customer-start.html` for workspace access
+1. Customer fills in `request-access.html` form.
+2. Form data submits to **Formspree** for lead capture.
+3. Site redirects the buyer to the configured **Lemon Squeezy** checkout URL with name and email prefilled.
+4. After payment, Lemon Squeezy should send the customer to `thank-you.html` from your product confirmation button or receipt email.
+5. Customer navigates to `customer-start.html` for workspace access.
 
-**Paystack fallback:** If `paystackPublicKey` is empty, a friendly message is shown instead of a broken checkout. Set `paystackFallbackMessage` in `config.js` to customize it.
+**Checkout fallback:** If `lemonSqueezyCheckoutUrl` is empty or invalid, the site shows the fallback message from `config.js` instead of sending buyers to a broken checkout.
 
 ---
 
@@ -100,9 +70,9 @@ funding-intelligence-vault/
 
 | Service | Purpose | Setup |
 |---|---|---|
-| **Paystack** | Payment processing | Add public key to `config.js` |
+| **Lemon Squeezy** | Payment processing | Add your shareable checkout URL to `config.js` |
 | **Formspree** | Lead capture / form submission | Create form at formspree.io, add endpoint to `config.js` |
-| **Softr** | Primary web app delivery | Build app per `docs/softr-app-spec.md`, add URL to `config.js` → `softrAppUrl` |
+| **Softr** | Primary web app delivery | Build app per `docs/softr-app-spec.md`, add URL to `config.js` |
 | **Airtable** | Softr data source + white-glove option | Build base per `docs/airtable-base-spec.md` |
 | **Google Sheets** | Backup delivery format | Create template, set sharing to "anyone with link," add URL to `config.js` |
 | **Vercel** | Hosting | Connect repo or run `vercel` |
@@ -122,8 +92,11 @@ funding-intelligence-vault/
 
 ### Payments & Forms
 - [ ] Set up Formspree form and add endpoint to `config.js`
-- [ ] Test Paystack checkout with a test key
-- [ ] Verify redirect to `thank-you.html` after payment
+- [ ] Create Lemon Squeezy product / variant and copy the shareable `/checkout/buy/` URL
+- [ ] Add `lemonSqueezyCheckoutUrl` to `config.js`
+- [ ] In Lemon Squeezy, set the product confirmation button to `https://funding-intelligence-vault.vercel.app/thank-you.html?status=paid`
+- [ ] In Lemon Squeezy, update the receipt button to your delivery or thank-you page
+- [ ] Test the checkout and verify the thank-you flow
 
 ### Site
 - [ ] Verify `customer-start.html` shows Softr app link correctly
@@ -134,7 +107,7 @@ funding-intelligence-vault/
 
 ### Buyer experience
 - [ ] Set up welcome email with Softr magic link (see `docs/customer-delivery-pack.md`)
-- [ ] Test full buyer flow: form → payment → thank-you → workspace → Softr login
+- [ ] Test full buyer flow: form → checkout → thank-you → workspace → Softr login
 
 ---
 

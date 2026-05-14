@@ -15,12 +15,10 @@ const SITE_CONFIG = {
   priceLabel: "$49 USD",
   earlyAccessLabel: "Early Access — $49",
 
-  // Paystack Payment
-  paystackPublicKey: "pk_live_9f246a1b01ecb07adc6f28865484fb76d6161b5d",
-  paystackCurrency: "USD",
-  paystackAmount: 4900, // in subunits (cents) — 4900 = $49.00
-  paystackFallbackMessage:
-    "Online payment is temporarily unavailable. Please email us at subscribe@itsdigitally.com to complete your purchase manually.",
+  // Lemon Squeezy checkout
+  lemonSqueezyCheckoutUrl: "https://digitallydone.lemonsqueezy.com/checkout/buy/7c476d98-20c2-472f-ac70-229aa1222764",
+  lemonSqueezyFallbackMessage:
+    "Checkout is temporarily unavailable. Please email us at subscribe@itsdigitally.com to complete your purchase manually.",
 
   // Form submission (Formspree)
   formspreeEndpoint: "https://formspree.io/f/xaqagedq",

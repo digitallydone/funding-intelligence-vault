@@ -1,6 +1,6 @@
 /**
  * BOS | Funding Intelligence Vault — Site JavaScript
- * Handles: config injection, Paystack checkout, Formspree, redirects, UI state
+ * Handles: config injection, Lemon Squeezy checkout, Formspree, redirects, UI state
  */
 
 (function () {
@@ -12,7 +12,7 @@
   function init() {
     applyConfig();
     bindExternalLinks();
-    bindPaystackButton();
+    bindLemonCheckoutButton();
     bindRequestForm();
     bindThankYouPage();
     bindCustomerStartPage();
@@ -40,7 +40,6 @@
         el.classList.remove("hidden");
         el.closest("[data-optional]")?.classList.remove("hidden");
       } else {
-        // Hide the button if the value is empty
         const wrapper = el.closest("[data-optional]");
         if (wrapper) {
           wrapper.classList.add("hidden");
@@ -78,60 +77,58 @@
     });
   }
 
-  // ── Paystack checkout ─────────────────────────────────────────
-  function bindPaystackButton() {
-    const btn = document.getElementById("paystack-btn");
+  // ── Lemon Squeezy checkout ────────────────────────────────────
+  function bindLemonCheckoutButton() {
+    const btn = document.getElementById("lemon-checkout-btn");
     if (!btn) return;
 
     btn.addEventListener("click", function () {
       const email = getStoredEmail() || promptForEmail();
       if (!email) return;
-      launchPaystack(email);
+      launchLemonCheckout({ email: email });
     });
   }
 
-  function launchPaystack(email, metadata) {
+  function launchLemonCheckout(customer) {
     if (typeof SITE_CONFIG === "undefined") {
       showPaymentFallback("Configuration not loaded. Please refresh and try again.");
-      return;
+      return false;
     }
 
-    const key = SITE_CONFIG.paystackPublicKey;
+    const checkoutUrl = buildLemonCheckoutUrl(customer);
 
-    if (!key) {
-      showPaymentFallback(SITE_CONFIG.paystackFallbackMessage);
-      return;
+    if (!checkoutUrl) {
+      showPaymentFallback(SITE_CONFIG.lemonSqueezyFallbackMessage);
+      return false;
     }
 
-    if (typeof PaystackPop === "undefined") {
-      showPaymentFallback(
-        "Payment provider could not load. Please check your internet connection and try again."
-      );
-      return;
-    }
-
-    const handler = PaystackPop.setup({
-      key: key,
-      email: email,
-      amount: SITE_CONFIG.paystackAmount,
-      currency: SITE_CONFIG.paystackCurrency,
-      label: SITE_CONFIG.productName + " — Early Access",
-      metadata: metadata || {},
-      onClose: function () {
-        // User closed modal — do nothing, let them re-open
-      },
-      callback: function (response) {
-        onPaymentSuccess(response.reference);
-      },
-    });
-
-    handler.openIframe();
+    window.location.href = checkoutUrl;
+    return true;
   }
 
-  function onPaymentSuccess(reference) {
-    storeTransactionRef(reference);
-    window.location.href =
-      "thank-you.html?ref=" + encodeURIComponent(reference) + "&status=paid";
+  function buildLemonCheckoutUrl(customer) {
+    const baseUrl = SITE_CONFIG?.lemonSqueezyCheckoutUrl;
+    if (!baseUrl) return null;
+
+    try {
+      const url = new URL(baseUrl);
+      if (customer?.email) {
+        url.searchParams.set("checkout[email]", customer.email);
+      }
+      if (customer?.name) {
+        url.searchParams.set("checkout[name]", customer.name);
+      }
+      if (customer?.organization) {
+        url.searchParams.set("checkout[custom][organization]", customer.organization);
+      }
+      if (customer?.role) {
+        url.searchParams.set("checkout[custom][role]", customer.role);
+      }
+      return url.toString();
+    } catch (err) {
+      console.warn("[site.js] Invalid Lemon Squeezy URL:", err.message);
+      return null;
+    }
   }
 
   function showPaymentFallback(message) {
@@ -145,7 +142,7 @@
     }
   }
 
-  // ── Request-access form (Formspree + Paystack) ────────────────
+  // ── Request-access form (Formspree + Lemon Squeezy) ───────────
   function bindRequestForm() {
     const form = document.getElementById("request-form");
     if (!form) return;
@@ -163,7 +160,7 @@
       // 1. Submit to Formspree
       const submitted = await submitToFormspree(data);
 
-      // 2. Store email for Paystack
+      // 2. Store email for checkout
       storeEmail(data.email);
 
       // 3. Store lead data
@@ -172,18 +169,11 @@
       setButtonLoading(submitBtn, false);
 
       if (submitted) {
-        showFormSuccess("Details saved. Proceeding to payment…");
-        await sleep(900);
+        showFormSuccess("Details saved. Redirecting to secure checkout…");
+        await sleep(700);
       }
 
-      // 4. Open Paystack regardless (even if Formspree failed)
-      const metadata = {
-        name: data.name,
-        organization: data.organization,
-        role: data.role,
-      };
-
-      launchPaystack(data.email, metadata);
+      launchLemonCheckout(data);
     });
   }
 
@@ -271,7 +261,6 @@
 
   // ── Guide CTA ─────────────────────────────────────────────────
   function bindGuideCTA() {
-    // Upgrade CTA at end of guide
     const upgradeBtn = document.getElementById("guide-upgrade-btn");
     if (upgradeBtn) {
       upgradeBtn.addEventListener("click", function () {
