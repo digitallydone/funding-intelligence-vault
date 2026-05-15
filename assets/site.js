@@ -262,6 +262,11 @@
     const form = document.getElementById("request-form");
     if (!form) return;
 
+    if (SITE_CONFIG?.formspreeEndpoint) {
+      form.action = SITE_CONFIG.formspreeEndpoint;
+    }
+    form.target = "lead-capture-frame";
+
     form.addEventListener("submit", function (e) {
       const submitBtn = form.querySelector('[type="submit"]');
       const data = getFormData(form);
@@ -277,8 +282,16 @@
       storeEmail(data.email);
       storeLead(data);
 
-      // Fire the lead capture in the background. Native form submission handles navigation.
-      submitToFormspreeInBackground(data);
+      const manualCheckout = document.getElementById("checkout-manual");
+      if (manualCheckout) {
+        manualCheckout.classList.remove("hidden");
+      }
+
+      showFormSuccess("Details saved. Opening secure checkout…");
+
+      window.setTimeout(function () {
+        launchLemonCheckout(data);
+      }, 120);
     });
   }
 
