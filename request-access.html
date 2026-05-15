@@ -50,8 +50,8 @@
     </div>
 
     <div class="label" style="background:rgba(245,158,11,.15); color:var(--amber);">Early Access — $49 USD</div>
-    <h1 style="color:#fff; font-size:clamp(1.5rem,4vw,2.25rem); margin-bottom:.75rem;">Tell us about your organization</h1>
-    <p style="color:rgba(255,255,255,.65); max-width:480px; margin:0 auto; font-size:.95rem;">We'll use this to tailor your onboarding and prioritize the workspace for your context. Then we'll redirect you to the secure checkout.</p>
+    <h1 style="color:#fff; font-size:clamp(1.5rem,4vw,2.25rem); margin-bottom:.75rem;">Go straight to secure checkout</h1>
+    <p style="color:rgba(255,255,255,.65); max-width:560px; margin:0 auto; font-size:.95rem;">We’ve removed the broken form step. Use the button below to go directly to Lemon Squeezy checkout for immediate access.</p>
   </div>
 </section>
 
@@ -60,67 +60,28 @@
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 380px; gap:3rem; align-items:start; max-width:960px; margin:0 auto;">
 
-      <!-- Form -->
+      <!-- Direct checkout -->
       <div>
         <div class="form-section" style="max-width:100%;">
-          <div id="form-success" class="alert alert-success hidden">
-            Details saved. Redirecting to secure checkout…
+          <div class="alert alert-info" style="margin-bottom:1rem; max-width:100%;">
+            <span>✓</span>
+            <span>This now bypasses the request form and takes you directly to checkout.</span>
           </div>
-          <div id="payment-fallback" class="alert alert-warning hidden"></div>
 
-          <form id="request-form" action="checkout-redirect" method="GET" novalidate>
-            <div class="form-group">
-              <label class="form-label" for="name">Full name <span>*</span></label>
-              <input class="form-control" type="text" id="name" name="name" placeholder="Jane Smith" required autocomplete="name" />
-            </div>
+          <div style="margin-top:1.25rem;">
+            <a href="#" data-config-href="lemonSqueezyCheckoutUrl" data-external class="btn btn-primary btn-full btn-lg">
+              Continue to Secure Payment →
+            </a>
+          </div>
 
-            <div class="form-group">
-              <label class="form-label" for="email">Email address <span>*</span></label>
-              <input class="form-control" type="email" id="email" name="email" placeholder="jane@organization.org" required autocomplete="email" />
-              <div class="form-hint">Your workspace access link will be sent here.</div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="organization">Organization name</label>
-              <input class="form-control" type="text" id="organization" name="organization" placeholder="Community Builders Society" autocomplete="organization" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="role">Your role</label>
-              <select class="form-control" id="role" name="role">
-                <option value="" disabled selected>Select your role…</option>
-                <option value="Executive Director / CEO">Executive Director / CEO</option>
-                <option value="Grant Writer / Manager">Grant Writer / Manager</option>
-                <option value="Development Officer">Development Officer</option>
-                <option value="Consultant / Freelancer">Consultant / Freelancer</option>
-                <option value="Program Manager">Program Manager</option>
-                <option value="Founder / Co-founder">Founder / Co-founder</option>
-                <option value="Board Member">Board Member</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="challenge">What's your biggest funding challenge right now?</label>
-              <textarea class="form-control" id="challenge" name="challenge" rows="3" placeholder="e.g. We can't find funders that match our specific mandate, or we keep missing application deadlines…"></textarea>
-              <div class="form-hint">Optional — helps us tailor your experience.</div>
-            </div>
-
-            <div style="margin-top:1.5rem;">
-              <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn">
-                Continue to Secure Payment →
-              </button>
-            </div>
-
-            <p style="text-align:center; font-size:.775rem; color:var(--light); margin-top:1rem;">
-              🔒 Secure checkout via Lemon Squeezy · USD $49 one-time · No subscription
-            </p>
-          </form>
+          <p style="text-align:center; font-size:.775rem; color:var(--light); margin-top:1rem;">
+            🔒 Secure checkout via Lemon Squeezy · USD $49 one-time · No subscription
+          </p>
         </div>
 
         <div class="alert alert-info" style="margin-top:1.25rem; max-width:100%;">
           <span>💡</span>
-          <span>After payment you'll be redirected to your onboarding page with the Google Sheets workspace link. We'll also send access to your email within a few hours.</span>
+          <span>After payment, use the thank-you/onboarding page to access your workspace. If you want buyer details collected later, we can add a simple post-purchase intake form separately.</span>
         </div>
       </div>
 

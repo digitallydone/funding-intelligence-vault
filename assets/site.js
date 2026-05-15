@@ -376,7 +376,7 @@
   // ── Guide CTA ─────────────────────────────────────────────────
   function bindGuideCTA() {
     const upgradeBtn = document.getElementById("guide-upgrade-btn");
-    if (upgradeBtn) {
+    if (upgradeBtn && !upgradeBtn.dataset.configHref) {
       upgradeBtn.addEventListener("click", function () {
         window.location.href = "request-access.html";
       });
