@@ -133,7 +133,7 @@
     if (customer?.role) params.set("role", customer.role);
     if (customer?.challenge) params.set("challenge", customer.challenge);
 
-    window.location.href = "checkout" + (params.toString() ? "?" + params.toString() : "");
+    window.location.href = "checkout-redirect" + (params.toString() ? "?" + params.toString() : "");
     return true;
   }
 
