@@ -361,11 +361,20 @@
     if (!page) return;
 
     const params = new URLSearchParams(window.location.search);
-    const ref = params.get("ref") || getStoredTransactionRef();
+    const ref =
+      params.get("ref") ||
+      params.get("order_id") ||
+      params.get("order_identifier") ||
+      getStoredTransactionRef();
     const status = params.get("status");
+    const email = (params.get("email") || "").trim().toLowerCase();
 
     const refEl = document.getElementById("transaction-ref");
     if (refEl && ref) refEl.textContent = ref;
+
+    if (email) {
+      storeEmail(email);
+    }
 
     const lead = getStoredLead();
     const nameEl = document.getElementById("customer-name");

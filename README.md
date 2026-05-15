@@ -59,8 +59,10 @@ Use the original Lemon Squeezy share URL that contains `/checkout/buy/`. Do not 
 1. Customer fills in `request-access.html` form.
 2. Form data submits to **Formspree** for lead capture.
 3. Site redirects the buyer to the configured **Lemon Squeezy** checkout URL with name and email prefilled.
-4. After payment, Lemon Squeezy should send the customer to `thank-you.html` from your product confirmation button or receipt email.
-5. Customer navigates to `customer-start.html` for workspace access.
+4. Lemon Squeezy sends an `order_created` webhook to `/api/lemonsqueezy-webhook`.
+5. The webhook provisions the buyer in **Softr** and can optionally send a custom post-purchase email.
+6. After payment, Lemon Squeezy should send the customer to `thank-you.html` from your product confirmation button or receipt email.
+7. Customer navigates to `customer-start.html` for workspace access.
 
 **Checkout fallback:** If `lemonSqueezyCheckoutUrl` is empty or invalid, the site shows the fallback message from `config.js` instead of sending buyers to a broken checkout.
 
@@ -72,6 +74,7 @@ Use the original Lemon Squeezy share URL that contains `/checkout/buy/`. Do not 
 |---|---|---|
 | **Lemon Squeezy** | Payment processing | Add your shareable checkout URL to `config.js` |
 | **Formspree** | Lead capture / form submission | Create form at formspree.io, add endpoint to `config.js` |
+| **Vercel Functions** | Paid-order webhook | Deploy `/api/lemonsqueezy-webhook` and add env vars |
 | **Softr** | Primary web app delivery | Build app per `docs/softr-app-spec.md`, add URL to `config.js` |
 | **Airtable** | Softr data source + white-glove option | Build base per `docs/airtable-base-spec.md` |
 | **Google Sheets** | Backup delivery format | Create template, set sharing to "anyone with link," add URL to `config.js` |
@@ -94,6 +97,9 @@ Use the original Lemon Squeezy share URL that contains `/checkout/buy/`. Do not 
 - [ ] Set up Formspree form and add endpoint to `config.js`
 - [ ] Create Lemon Squeezy product / variant and copy the shareable `/checkout/buy/` URL
 - [ ] Add `lemonSqueezyCheckoutUrl` to `config.js`
+- [ ] Add Vercel env vars: `LEMON_SQUEEZY_WEBHOOK_SECRET`, `SOFTR_API_KEY`, `SOFTR_DOMAIN`
+- [ ] Optional email env vars: `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `SITE_URL`, `SOFTR_LOGIN_URL`
+- [ ] In Lemon Squeezy, create a webhook for `order_created` pointing to `https://funding-intelligence-vault.vercel.app/api/lemonsqueezy-webhook`
 - [ ] In Lemon Squeezy, set the product confirmation button to `https://funding-intelligence-vault.vercel.app/thank-you.html?status=paid`
 - [ ] In Lemon Squeezy, update the receipt button to your delivery or thank-you page
 - [ ] Test the checkout and verify the thank-you flow
@@ -106,8 +112,47 @@ Use the original Lemon Squeezy share URL that contains `/checkout/buy/`. Do not 
 - [ ] Test on mobile
 
 ### Buyer experience
-- [ ] Set up welcome email with Softr magic link (see `docs/customer-delivery-pack.md`)
+- [ ] Verify that the webhook creates the Softr user and that the buyer can request a Softr login code with the same email used at checkout
+- [ ] If using Resend, verify the custom post-purchase email arrives
 - [ ] Test full buyer flow: form → checkout → thank-you → workspace → Softr login
+
+---
+
+## Webhook Setup
+
+The repo includes a Vercel function at `api/lemonsqueezy-webhook.js`.
+
+It does three things when Lemon Squeezy sends an `order_created` event:
+
+1. Verifies the `X-Signature` header using `LEMON_SQUEEZY_WEBHOOK_SECRET`
+2. Creates the buyer in Softr using `SOFTR_API_KEY` and `SOFTR_DOMAIN`
+3. Optionally sends a custom buyer email through Resend if `RESEND_API_KEY` and `RESEND_FROM_EMAIL` are configured
+
+### Required env vars
+
+- `LEMON_SQUEEZY_WEBHOOK_SECRET`
+- `SOFTR_API_KEY`
+- `SOFTR_DOMAIN`
+
+### Optional env vars
+
+- `SOFTR_GENERATE_MAGIC_LINK=true`
+- `SOFTR_SYNC_AFTER_PROVISION=false`
+- `RESEND_API_KEY`
+- `RESEND_FROM_EMAIL`
+- `POST_PURCHASE_EMAIL_SUBJECT`
+- `SOFTR_LOGIN_URL`
+- `SOFTR_APP_URL`
+- `SITE_URL`
+
+### Lemon Squeezy dashboard settings
+
+- Webhook URL: `https://funding-intelligence-vault.vercel.app/api/lemonsqueezy-webhook`
+- Event: `order_created`
+- Receipt email button: your `thank-you` page
+- Confirmation modal button: your `thank-you` page
+
+Per Lemon Squeezy’s docs, the receipt email itself is sent by Lemon Squeezy. The webhook is what powers post-purchase provisioning in Softr.
 
 ---
 
